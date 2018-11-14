@@ -2,3 +2,28 @@ body{
     background:black;
     color:white;
 }
+.heading{
+    /* font-size: 50px; */
+    font-family: 'Alfa Slab One', cursive;
+    color:red;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.main{
+    width:90%;
+    margin:5% 5% 10% 5%;
+    border:5px dotted white;
+    text-align: center;
+}
+hr{
+    border:5px dotted white;
+}
+*{
+    box-sizing: border-box;
+}
+/* img{ 
+    margin-top: 20% 10px 20% 10px;
+    height: 10%;
+    width:10%;
+    float: left;
+} */
