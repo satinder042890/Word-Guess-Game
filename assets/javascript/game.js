@@ -5,6 +5,7 @@ var letters_Guessed=[];
 var computer=null;
 var user_Guess=null;
 var correct=[];
+var audioElement;
 
 //computer randomly pick a word from array of strings
 
@@ -97,10 +98,16 @@ function compare()
         else
         {
                 console.log("not match");
+                var sameLetter=true;
+                sameLetter=letters_Guessed.includes(user_Guess);
+                console.log(sameLetter);
+                if(sameLetter === false)
+                {
                 no_Of_Guesses--;
                 no_Of_Guesses_Change();
                 letters_Guessed.push(user_Guess);
                 letters_Guessed_push();
+                }
         }
         if(no_Of_Guesses === 0)
         {
@@ -121,57 +128,65 @@ function compare()
                 if(computer === "india")
                 {
                     src= "assets/images/indiaf.jpg";
+                    document.querySelector("#country").innerHTML="INDIA";
                 }
                 if(computer === "usa")
                 {
                     src= "assets/images/usaf.jpg";
+                    document.querySelector("#country").innerHTML="USA";
                 }
                 if(computer === "france")
                 {
                     src= "assets/images/france.jpg";
+                    document.querySelector("#country").innerHTML="FRANCE";
+
                 }
                 if(computer === "canada")
                 {
                     src= "assets/images/canada.jpg";
+                    document.querySelector("#country").innerHTML="CANADA";
                 }
                 if(computer === "italy")
                 {
                     src= "assets/images/italy.jpg";
+                    document.querySelector("#country").innerHTML="ITALY";
                 }
                 if(computer === "england")
                 {
                     src= "assets/images/england.jpg";
+                    document.querySelector("#country").innerHTML="ENGLAND";
                 }
                 if(computer === "australia")
                 {
                     src= "assets/images/australia.jpg";
+                    document.querySelector("#country").innerHTML="AUSTRALIA";
                 }
                 if(computer === "newzealand")
                 {
                     src= "assets/images/newzealand.jpg";
+                    document.querySelector("#country").innerHTML="NEWZEALAND";
                 }
                 if(computer === "germany")
                 {
                     src= "assets/images/germany.jpg";
+                    document.querySelector("#country").innerHTML="GERMANY";
                 }
                 if(computer === "japan")
                 {
                     src= "assets/images/japan.jpg";
-                }
-                if(computer === "france")
-                {
-                    src= "assets/images/france.jpg";
+                    document.querySelector("#country").innerHTML="JAPAN";
                 }
                 return src;
-            })
+            });
             console.log("you won");
-            //document.querySelector("#right").innerHTML=computer;
-             //alert("congratulations you find the word");
-             if(confirm("you find this word.. Do you want to continue with another word?"))
-             {
-                clearAll();
-             }
-           
+            clearAll();           
+            if(wins === 5)
+            {
+               alert("congratulations!!! you guess the word 5 times");
+                wins = 0;
+                document.querySelector("#win").innerHTML=wins;
+               clearAll();
+            }
         }
     };   
 }
@@ -181,8 +196,17 @@ function compare()
 document.onkeypress=function(e)
 {
        var user_Guess1=String.fromCharCode(e.which).toLowerCase();
+       audioElement = document.createElement("audio");
+       audioElement.setAttribute("src", "http://soundimage.org/wp-content/uploads/2017/11/Bounce-Light-2.mp3");
        console.log(user_Guess1);
        comp_Words();
        compare();
-       
+       $(".play-button").on("click", function() 
+       {
+          audioElement.play();
+       });
+       $(".pause-button").on("click", function()
+       {
+           audioElement.pause();
+       });
 };
