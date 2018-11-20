@@ -1,5 +1,5 @@
 body{
-    background:black;
+    background:url("https://vignette.wikia.nocookie.net/steamtradingcards/images/d/d2/GMod_Background_4.jpg/revision/latest?cb=20130902030650");
     color:white;
 }
 .heading{
@@ -14,6 +14,7 @@ body{
     margin:5% 5% 10% 5%;
     border:5px dotted white;
     text-align: center;
+    background: black;
 }
 hr{
     border:5px dotted white;
@@ -21,9 +22,4 @@ hr{
 *{
     box-sizing: border-box;
 }
-/* img{ 
-    margin-top: 20% 10px 20% 10px;
-    height: 10%;
-    width:10%;
-    float: left;
-} */
+
