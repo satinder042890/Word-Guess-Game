@@ -197,7 +197,7 @@ document.onkeypress=function(e)
 {
        var user_Guess1=String.fromCharCode(e.which).toLowerCase();
        audioElement = document.createElement("audio");
-       audioElement.setAttribute("src", "http://soundimage.org/wp-content/uploads/2017/11/Bounce-Light-2.mp3");
+       audioElement.setAttribute("src", "https://soundimage.org/wp-content/uploads/2017/11/Bounce-Light-2.mp3");
        console.log(user_Guess1);
        comp_Words();
        compare();
